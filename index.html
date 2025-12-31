@@ -61,23 +61,37 @@
         p.subtitle { color: var(--text-muted); font-size: 1.1rem; max-width: 500px; margin: 0 auto; line-height: 1.6; }
 
         /* App 容器 - 极致融合 */
+        /* --- 这里的 background 必须改成深色！ --- */
         .app-wrapper {
             width: 100%;
             max-width: 1000px;
-            /* 高度设定：根据内容调整，580px 刚刚好 */
-            height: 580px; 
-            background: var(--bg-app); /* 这里背景色必须和 iframe 内部一致 */
+            
+            /* 👇 之前这里是白色，现在强制改成和 App 内部一样的深蓝黑 👇 */
+            background: #020617; 
+            
+            /* 给一个发光的边框，增加高级感 */
+            border: 1px solid rgba(99, 102, 241, 0.2); 
+            
             border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); /* 悬浮感阴影 */
+            /* 调整高度，消除留白 */
+            height: 550px; 
+            
+            /* 极光阴影 */
+            box-shadow: 0 0 60px -15px rgba(99, 102, 241, 0.15); 
+            
             position: relative;
             overflow: hidden;
             margin-bottom: 80px;
         }
 
-        iframe { 
-            width: 100%; height: 100%; border: none; 
-            opacity: 0; animation: fadeIn 1s ease forwards 0.5s; /* 优雅的淡入动画 */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            /* 稍微放大，盖住边缘缝隙 */
+            transform: scale(1.002);
+            /* 确保 iframe 背景也是黑的 */
+            background: #020617; 
         }
         
         @keyframes fadeIn { to { opacity: 1; } }
@@ -150,3 +164,4 @@
 
 </body>
 </html>
+
