@@ -4,102 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SonicFlow - AI Vocal Remover</title>
-    <!-- 引入高级字体 Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            background-color: #f8fafc; /* 浅灰底色 */
-            color: #0f172a;
+            background-color: #f3f4f6; /* 浅灰底 */
+            color: #111827;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* --- 核心高级感来源：动态背景 --- */
-        .background-gradient {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: -1;
+        /* 极光背景特效 */
+        .aurora-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background: 
-                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(217, 70, 239, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
-            filter: blur(80px); /* 强力模糊，形成唯美光晕 */
-            animation: breathe 10s infinite alternate;
-        }
-        @keyframes breathe {
-            0% { transform: scale(1); opacity: 0.8; }
-            100% { transform: scale(1.1); opacity: 1; }
+                radial-gradient(at 0% 0%, rgba(167, 139, 250, 0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(244, 114, 182, 0.2) 0px, transparent 50%);
+            filter: blur(60px);
         }
 
         /* 导航 */
-        nav { width: 100%; max-width: 1200px; padding: 30px 40px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; color: #0f172a; }
-        .badge { background: #eff6ff; color: #3b82f6; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        nav { width: 100%; max-width: 1000px; padding: 25px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.5px; color: #111827; }
 
-        /* 标题区 */
-        .hero { text-align: center; margin-top: 40px; margin-bottom: 50px; }
-        h1 { 
-            font-size: 3.5rem; 
-            font-weight: 800; 
-            letter-spacing: -1.5px; 
-            margin-bottom: 15px; 
-            background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p { color: #64748b; font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        /* 标题 */
+        .hero { text-align: center; margin-top: 20px; margin-bottom: 40px; }
+        h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; color: #111827; }
+        p { color: #6b7280; font-size: 1.1rem; }
 
-        /* --- 核心容器：悬浮卡片 --- */
+        /* --- 核心容器 (紧致版) --- */
         .app-wrapper {
             width: 100%;
-            max-width: 1000px;
+            max-width: 900px; /* 稍微窄一点，更精致 */
             
-            /* 👇 关键修改：改矮一点，更紧凑 👇 */
-            height: 500px; 
+            /* 👇 绝对紧致高度，消灭底部大留白 👇 */
+            height: 450px; 
             
             background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 
-                0 4px 6px -1px rgba(0, 0, 0, 0.05), 
-                0 20px 40px -6px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            overflow: hidden;
+            border-radius: 20px;
+            /* 悬浮投影 */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            overflow: hidden; /* 裁剪掉 iframe 多余部分 */
+            margin-bottom: 60px;
             position: relative;
-            margin-bottom: 80px;
         }
 
-        iframe { width: 100%; height: 100%; border: none; }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            /* 稍微放大，防止白边 */
+            transform: scale(1.002);
+        }
 
-        /* 底部版权 */
-        footer { color: #94a3b8; font-size: 0.9rem; margin-bottom: 40px; }
+        /* Loading 遮罩 */
+        .loading-mask {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: white; display: flex; align-items: center; justify-content: center;
+            z-index: -1; font-size: 0.9rem; color: #9ca3af;
+        }
+
+        footer { color: #9ca3af; font-size: 0.85rem; margin-bottom: 40px; }
     </style>
 </head>
 <body>
 
-    <div class="background-gradient"></div>
+    <div class="aurora-bg"></div>
 
-    
+    <nav>
+        <div class="logo">SonicFlow</div>
+    </nav>
 
     <div class="hero">
         <h1>Separate Vocals Like Magic.</h1>
-        <p>The world's most advanced AI stem splitter. Free & Unlimited.</p>
+        <p>Free AI Stem Splitter for Creators.</p>
     </div>
 
     <div class="app-wrapper">
+        <div class="loading-mask">Loading Engine...</div>
+        <!-- 你的 Hugging Face 链接 -->
         <iframe src="https://ethankyrgyz-free-vocal-remover.hf.space" allow="clipboard-read; clipboard-write"></iframe>
     </div>
 
     <footer>
-        &copy; 2026 SonicFlow. Built for Creators.
+        &copy; 2026 SonicFlow.
     </footer>
 
 </body>
 </html>
-
-
