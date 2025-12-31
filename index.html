@@ -126,15 +126,16 @@
 
         /* --- 👇👇👇 你要求的核心修改部分 👇👇👇 --- */
         
+        /* --- 核心 App 容器调整 (截肢版) --- */
         .app-container {
             width: 100%;
-            /* 之前是 960px，现在改大一点，减少留白 */
             max-width: 1000px; 
-            /* 高度稍微调低一点，让它更紧凑 */
-            height: 650px; 
+            
+            /* 👇👇👇 关键修改：高度大幅减小，消灭底部留白 👇👇👇 */
+            height: 520px; 
+            
             position: relative;
-            margin-bottom: 80px;
-            /* 关键：把容器的内边距去掉，让 iframe 撑满 */
+            margin-bottom: 60px; /* 底部外边距也减小 */
             padding: 0 10px; 
         }
 
