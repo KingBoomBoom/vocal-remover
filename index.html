@@ -14,11 +14,11 @@
     <style>
         /* --- 核心变量定义 --- */
         :root {
-            --bg-dark: #050505;
+            /* 关键：统一背景色为 #0b0f19，必须和 Python 后端一致 */
+            --bg-dark: #0b0f19;
             --glass-surface: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
             --primary-glow: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.15), transparent 60%);
-            --accent-color: #8b5cf6; /* 紫色霓虹 */
             --text-main: #ffffff;
             --text-muted: #9ca3af;
         }
@@ -28,9 +28,10 @@
         
         body {
             background-color: var(--bg-dark);
+            /* 背景纹理 */
             background-image: 
-                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.08) 0px, transparent 50%);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
@@ -40,7 +41,7 @@
             align-items: center;
         }
 
-        /* --- 动态背景光晕 (逼格来源) --- */
+        /* --- 动态背景光晕 --- */
         .ambient-light {
             position: fixed;
             top: 20%;
@@ -105,7 +106,7 @@
 
         h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 4rem;
+            font-size: 3.5rem;
             line-height: 1.1;
             font-weight: 700;
             letter-spacing: -0.03em;
@@ -123,56 +124,63 @@
             line-height: 1.6;
         }
 
-        /* --- 核心 App 容器 (最牛逼的部分) --- */
+        /* --- 👇👇👇 你要求的核心修改部分 👇👇👇 --- */
+        
         .app-container {
             width: 100%;
-            max-width: 960px;
-            height: 700px; /* 控制高度 */
+            /* 之前是 960px，现在改大一点，减少留白 */
+            max-width: 1000px; 
+            /* 高度稍微调低一点，让它更紧凑 */
+            height: 650px; 
             position: relative;
             margin-bottom: 80px;
-            padding: 0 20px;
+            /* 关键：把容器的内边距去掉，让 iframe 撑满 */
+            padding: 0 10px; 
         }
 
         .glass-frame {
             position: relative;
             width: 100%;
             height: 100%;
-            background: #0b0f19; /* 必须匹配 HuggingFace 的深色背景 */
+            /* 这里的背景色必须和 app.py 里的 #0b0f19 一致，防止加载时闪白屏 */
+            background: #0b0f19; 
             border-radius: 24px;
             border: 1px solid var(--glass-border);
             box-shadow: 
                 0 0 0 1px rgba(0,0,0, 0.5),
                 0 20px 50px -10px rgba(0, 0, 0, 0.5),
-                0 0 40px rgba(124, 58, 237, 0.1); /* 紫色微光 */
+                0 0 40px rgba(124, 58, 237, 0.1);
             overflow: hidden;
             transition: transform 0.3s ease;
         }
-
-        /* 增加一点交互感 */
+        
+        /* 增加一点悬停微动感 */
         .glass-frame:hover {
             border-color: rgba(139, 92, 246, 0.3);
-            box-shadow: 0 0 60px rgba(124, 58, 237, 0.2);
         }
 
-        /* iframe 完美融合 */
         iframe {
             width: 100%;
             height: 100%;
             border: none;
-            /* 这里做一个遮罩，防止 iframe 滚动条丑陋 */
-            mask-image: linear-gradient(to bottom, black 95%, transparent 100%); 
+            /* 这里的 scale 可以让里面的内容稍微放大一点，填满缝隙 */
+            transform: scale(1.01); 
         }
+
+        /* --- 👆👆👆 修改结束 👆👆👆 --- */
+
 
         /* --- 加载动画 (在 iframe 加载出来前显示) --- */
         .loading-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: #0b0f19;
+            /* 确保这里的背景色也是深黑，无缝衔接 */
+            background: #0b0f19; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 0; /* 在 iframe 后面 */
+            z-index: 0;
         }
         
         .loader {
@@ -203,12 +211,12 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* --- 特性网格 (Bento Grid 风格) --- */
+        /* --- 特性网格 --- */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            max-width: 960px;
+            max-width: 1000px;
             width: 100%;
             padding: 0 20px;
             margin-bottom: 60px;
@@ -234,14 +242,12 @@
         /* --- 移动端适配 --- */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            .app-container { height: 850px; } /* 手机端拉高高度 */
-            .glass-frame { border-radius: 16px; }
+            .app-container { height: 850px; } /* 手机端拉高高度以适应单列布局 */
         }
     </style>
 </head>
 <body>
 
-    <!-- 背景呼吸灯 -->
     <div class="ambient-light"></div>
 
     <nav>
@@ -261,43 +267,9 @@
 
     <main class="app-container">
         <div class="glass-frame">
-            <!-- 加载动画占位 -->
             <div class="loading-overlay">
                 <span class="loader"></span>
                 <p style="margin-top: 20px; color: #666; font-size: 0.8rem;">Initializing Neural Engine...</p>
             </div>
             
-            <!-- 👇👇👇 请把 src 换成你的 Hugging Face 链接 👇👇👇 -->
-            <iframe 
-                src="https://ethankyrgyz-free-vocal-remover.hf.space" 
-                allow="clipboard-read; clipboard-write"
-                loading="lazy"
-                style="position: relative; z-index: 1;"
-            ></iframe>
-        </div>
-    </main>
-
-    <section class="features-grid">
-        <div class="feature-card">
-            <div class="feature-icon">⚡️</div>
-            <div class="feature-title">Lightning Fast</div>
-            <div class="feature-desc">Processing happens in seconds using optimized GPU clusters via Demucs v4 architecture.</div>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">🎧</div>
-            <div class="feature-title">Lossless Quality</div>
-            <div class="feature-desc">Supports WAV export up to 320kbps. Crystal clear separation for professional production.</div>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">🛡️</div>
-            <div class="feature-title">Privacy Focused</div>
-            <div class="feature-desc">No login required. Your tracks are automatically deleted from our servers after processing.</div>
-        </div>
-    </section>
-
-    <footer style="margin-bottom: 40px; color: #444; font-size: 0.8rem;">
-        &copy; 2026 SonicFlow AI. Built for Creators.
-    </footer>
-
-</body>
-</html>
+            <!-- 👇👇👇 请再次确认这里的链接是你 Hugging Face 的 Direct U
