@@ -3,165 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SonicFlow AI | Professional Vocal Remover</title>
-    <meta name="description" content="Studio-quality AI stem separation. Extract vocals and instrumentals instantly.">
-    <!-- 引入最专业的字体：Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <title>SonicFlow AI - Professional Vocal Remover</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-page: #020617; /* Slate 950 - 极深蓝黑 */
-            --bg-app: #0f172a;  /* Slate 900 - 必须要和 App 背景一致 */
-            --primary: #6366f1; /* Indigo 500 */
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+            /* 核心变量：统统锁死为深色 */
+            --bg-page: #020617; /* 网页背景：极深蓝黑 */
+            --bg-card: #0f172a; /* App容器背景：深蓝灰 */
+            --border:  #1e293b; /* 边框颜色 */
+            --accent:  #6366f1; /* 提亮色：靛蓝 */
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
             background-color: var(--bg-page); 
-            color: var(--text-main); 
+            color: #f8fafc; 
             font-family: 'Inter', sans-serif; 
+            display: flex; flex-direction: column; align-items: center; 
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
         }
 
-        /* 顶部光晕特效 (氛围感) */
-        .glow {
-            position: absolute;
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
+        /* 1. 导航栏 (去掉了那个丑标签) */
+        nav { width: 100%; max-width: 1200px; padding: 30px; display: flex; align-items: center; }
+        .logo { font-weight: 800; font-size: 1.4rem; color: white; letter-spacing: -0.5px; }
+        .logo span { color: var(--accent); }
 
-        /* 导航 */
-        nav { 
-            width: 100%; max-width: 1200px; padding: 30px; 
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; display: flex; align-items: center; gap: 8px; }
-        .logo span { color: var(--primary); }
-        .tag { font-size: 0.75rem; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; color: var(--text-muted); }
+        /* 2. 标题区 */
+        .hero { text-align: center; margin: 40px 0 50px 0; }
+        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; }
+        p { color: #94a3b8; font-size: 1.1rem; }
 
-        /* 标题区 */
-        .hero { text-align: center; margin: 40px 0 60px 0; padding: 0 20px; }
-        h1 { 
-            font-size: 3.5rem; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 20px;
-            background: linear-gradient(to bottom, #fff, #94a3b8);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        p.subtitle { color: var(--text-muted); font-size: 1.1rem; max-width: 500px; margin: 0 auto; line-height: 1.6; }
-
-        /* App 容器 - 极致融合 */
-        /* --- 这里的 background 必须改成深色！ --- */
+        /* 3. 核心容器 (你截图里那个白色的大框，现在强制变黑) */
         .app-wrapper {
             width: 100%;
             max-width: 1000px;
-            
-            /* 👇 之前这里是白色，现在强制改成和 App 内部一样的深蓝黑 👇 */
-            background: #020617; 
-            
-            /* 给一个发光的边框，增加高级感 */
-            border: 1px solid rgba(99, 102, 241, 0.2); 
-            
-            border-radius: 24px;
-            /* 调整高度，消除留白 */
-            height: 550px; 
-            
-            /* 极光阴影 */
-            box-shadow: 0 0 60px -15px rgba(99, 102, 241, 0.15); 
-            
-            position: relative;
+            height: 600px;
+            /* 👇 关键：这里之前是白色，现在强制改成深色 👇 */
+            background-color: var(--bg-card); 
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); /* 只有阴影，没有白底 */
             overflow: hidden;
-            margin-bottom: 80px;
+            position: relative;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            /* 稍微放大，盖住边缘缝隙 */
-            transform: scale(1.002);
-            /* 确保 iframe 背景也是黑的 */
-            background: #020617; 
-        }
-        
-        @keyframes fadeIn { to { opacity: 1; } }
-
-        /* Loading 占位符 */
-        .loading-placeholder {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            background: var(--bg-app); z-index: -1;
-        }
-        .spinner { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        /* 特性列 */
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1000px; width: 100%; padding: 0 20px; margin-bottom: 80px; }
-        .card h3 { font-size: 1rem; margin-bottom: 8px; color: #fff; }
-        .card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
-
-        /* 底部 */
-        footer { border-top: 1px solid rgba(255,255,255,0.05); width: 100%; padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .app-wrapper { height: 900px; } /* 手机端拉长高度 */
-            .grid { grid-template-columns: 1fr; text-align: center; }
-        }
+        iframe { width: 100%; height: 100%; border: none; background: var(--bg-card); }
     </style>
 </head>
 <body>
 
-    <div class="glow"></div>
-
     <nav>
+        <!-- 标签已经删掉了 -->
         <div class="logo">SonicFlow <span>AI</span></div>
-        <div class="tag">v4.0 Stable</div>
     </nav>
 
     <div class="hero">
         <h1>Unlock the Stems.</h1>
-        <p class="subtitle">Isolate vocals and instrumentals with next-gen AI precision. 100% Free for creators.</p>
+        <p>Studio-quality AI separation. 100% Free.</p>
     </div>
 
     <div class="app-wrapper">
-        <div class="loading-placeholder">
-            <div class="spinner"></div>
-            <p style="margin-top: 15px; font-size: 0.8rem; color: #64748b;">Initializing Engine...</p>
-        </div>
-        <!-- 👇 务必确认链接正确 👇 -->
+        <!-- 你的链接 -->
         <iframe src="https://ethankyrgyz-free-vocal-remover.hf.space" allow="clipboard-read; clipboard-write"></iframe>
     </div>
 
-    <div class="grid">
-        <div class="card">
-            <h3>⚡️ Lightning Fast</h3>
-            <p>Optimized GPU processing separates your tracks in seconds, not minutes.</p>
-        </div>
-        <div class="card">
-            <h3>💎 Lossless Quality</h3>
-            <p>Export in high-fidelity WAV format. Perfect for remixing and production.</p>
-        </div>
-        <div class="card">
-            <h3>🔒 Privacy First</h3>
-            <p>We don't store your files. Data is automatically wiped after processing.</p>
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2026 SonicFlow AI. Built in Kyrgyzstan.
-    </footer>
-
 </body>
 </html>
-
