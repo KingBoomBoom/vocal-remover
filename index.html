@@ -3,86 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SonicFlow - AI Stem Splitter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <title>SonicFlow - Free AI Vocal Remover & Acapella Extractor 2026</title>
+    <meta name="description" content="Best Free Online Vocal Remover. Separate vocals from instrumentals instantly using AI. No signup, unlimited uploads.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            margin: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: radial-gradient(circle at 50% 0%, #eef2ff, #f1f5f9);
-            color: #0f172a;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
+        :root { --primary: #6c5ce7; --dark: #2d3436; --light: #f9f9f9; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: var(--light); color: var(--dark); }
+        
+        /* 导航栏 */
+        .navbar { background: white; padding: 15px 5%; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--primary); text-decoration: none; }
+        
+        /* 核心区域 */
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .hero-text { text-align: center; margin-bottom: 30px; }
+        .hero-text h1 { font-size: 2.5rem; margin-bottom: 10px; color: #1a1a1a; }
+        .hero-text p { color: #666; font-size: 1.1rem; }
+
+        /* 关键 UX：防流失提示 */
+        .alert-box {
+            background: #fff3cd; border: 1px solid #ffeeba; color: #856404;
+            padding: 15px; border-radius: 8px; margin-bottom: 20px;
+            text-align: center; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 10px;
         }
 
-        nav { width: 100%; max-width: 1200px; padding: 25px 40px; display: flex; align-items: center; }
-        .logo { font-weight: 900; font-size: 1.5rem; color: #1e1b4b; display: flex; align-items: center; gap: 8px; }
-        .logo span { color: #6366f1; }
+        /* Iframe 容器 */
+        .tool-wrapper {
+            background: white; border-radius: 16px; overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+        iframe { width: 100%; height: 800px; border: none; display: block; }
 
-        .hero { text-align: center; margin: 30px 0 40px 0; }
-        h1 { font-size: 3.5rem; font-weight: 900; margin: 0 0 10px 0; color: #1e1b4b; letter-spacing: -1.5px; }
-        p { color: #64748b; font-size: 1.2rem; font-weight: 500; }
-
-        /* --- 核心容器：严丝合缝版 --- */
-        .app-wrapper {
-            width: 95%;
-            max-width: 1100px; 
-            
-            /* 👇 高度锁死 550px，刚好包住里面变大的组件 👇 */
-            height: 550px; 
-            
-            background: #ffffff;
-            border-radius: 24px;
-            /* 更有力的投影 */
-            box-shadow: 
-                0 25px 50px -12px rgba(99, 102, 241, 0.15),
-                0 0 0 1px rgba(0,0,0,0.03);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 40px;
+        /* 广告占位符 */
+        .ad-slot {
+            background: #eee; height: 100px; margin: 30px 0; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center; color: #999;
+            font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
         }
 
-        iframe { width: 100%; height: 100%; border: none; }
-
-        /* 信任栏 */
-        .trust-bar { display: flex; gap: 30px; margin-top: 10px; opacity: 0.7; }
-        .trust-item { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 0.9rem; color: #475569; }
-
-        footer { margin-top: 40px; color: #94a3b8; font-size: 0.8rem; padding-bottom: 20px;}
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .app-wrapper { height: 850px; width: 100%; border-radius: 0; }
-            .trust-bar { flex-wrap: wrap; justify-content: center; gap: 15px; }
-        }
+        /* SEO 内容区 (给谷歌看的) */
+        .seo-section { background: white; padding: 40px; margin-top: 40px; border-radius: 16px; }
+        .seo-section h2 { margin-top: 0; color: var(--primary); }
+        .seo-section h3 { margin-top: 25px; font-size: 1.2rem; }
+        .seo-section p { line-height: 1.7; color: #555; }
+        
+        footer { text-align: center; padding: 30px; color: #999; font-size: 0.8rem; margin-top: 50px; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">SonicFlow<span>.</span></div>
+    <nav class="navbar">
+        <a href="#" class="logo">SonicFlow.</a>
+        <span style="font-size:0.9rem; color:#666;">High Quality AI Stem Separation</span>
     </nav>
 
-    <div class="hero">
-        <h1>Separate Vocals Like Magic.</h1>
-        <p>Professional AI Stem Separation. No Signup.</p>
+    <div class="container">
+        <div class="hero-text">
+            <h1>Remove Vocals from Any Song</h1>
+            <p>100% Free AI Tool. No Signup Required.</p>
+        </div>
+
+        <div class="alert-box">
+            <span>⏳ <strong>Note:</strong> We use free cloud servers. Processing takes about <strong>60-90 seconds</strong>. Please do not close the tab!</span>
+        </div>
+
+        <div class="tool-wrapper">
+            <iframe src="https://ethankyrgyz-free-vocal-remover.hf.space"></iframe>
+        </div>
+
+        <div class="ad-slot">Advertisement Space</div>
+
+        <div class="seo-section">
+            <h2>How to Separate Vocals and Instrumentals Online?</h2>
+            <p>SonicFlow utilizes the advanced <strong>Demucs v4 AI model</strong> to split audio tracks with studio quality. Whether you need an instrumental for Karaoke or an Acapella for remixing, our tool does it instantly.</p>
+            
+            <h3>Why choose SonicFlow?</h3>
+            <ul>
+                <li><strong>Completely Free:</strong> No hidden costs, no credits system.</li>
+                <li><strong>Privacy Focused:</strong> Your files are processed in RAM and never stored.</li>
+                <li><strong>High Quality:</strong> Supports MP3, WAV, and FLAC formats.</li>
+            </ul>
+
+            <h3>Is it better than Lalal.ai or PhonicMind?</h3>
+            <p>Many paid services use older models. SonicFlow uses the latest open-source AI, giving you comparable results without the monthly subscription fee.</p>
+        </div>
     </div>
 
-    <div class="app-wrapper">
-        <iframe src="https://ethankyrgyz-free-vocal-remover.hf.space" allow="clipboard-read; clipboard-write"></iframe>
-    </div>
-
-    <div class="trust-bar">
-        <div class="trust-item">⚡ FAST</div>
-        <div class="trust-item">🔒 SECURE</div>
-        <div class="trust-item">💎 HIGH QUALITY</div>
-    </div>
-
-    <footer>&copy; 2026 SonicFlow AI</footer>
+    <footer>
+        &copy; 2026 SonicFlow AI. Built with Demucs. <br>
+        <a href="#" style="color:#999; text-decoration:none;">Privacy Policy</a> | <a href="#" style="color:#999; text-decoration:none;">Terms of Service</a>
+    </footer>
 
 </body>
 </html>
