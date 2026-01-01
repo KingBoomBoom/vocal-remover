@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SonicFlow - AI Stem Splitter</title>
+    <title>SonicFlow - Professional AI Stem Splitter</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            /* 极光背景：更柔和的高级灰紫 */
-            background: radial-gradient(circle at 50% 0%, #eef2ff, #f3f4f6);
+            /* 背景：更加柔和的极光漫射 */
+            background: radial-gradient(circle at 50% -20%, #e0e7ff, #f8fafc 80%);
             color: #1e293b;
             display: flex;
             flex-direction: column;
@@ -19,77 +19,65 @@
             overflow-x: hidden;
         }
 
-        /* 氛围光：让背景不那么单调 */
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: -1;
-            opacity: 0.6;
-        }
-        .orb-1 { top: -100px; left: 20%; width: 400px; height: 400px; background: #c7d2fe; }
-        .orb-2 { top: 100px; right: 20%; width: 300px; height: 300px; background: #fbcfe8; }
-
-        /* 导航 */
-        nav { width: 100%; max-width: 900px; padding: 30px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; color: #0f172a; }
+        /* 顶部导航 */
+        nav { width: 100%; max-width: 1200px; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; font-size: 1.6rem; letter-spacing: -0.5px; color: #0f172a; display: flex; align-items: center; gap: 10px;}
+        .logo::before { content: ''; width: 24px; height: 24px; background: linear-gradient(135deg, #6366f1, #d946ef); border-radius: 6px; }
 
         /* 标题区 */
-        .hero { text-align: center; margin: 20px 0 40px 0; padding: 0 20px; }
+        .hero { text-align: center; margin: 30px 0 50px 0; }
         h1 { 
-            font-size: 3rem; 
+            font-size: 3.5rem; 
             font-weight: 800; 
-            line-height: 1.1; 
             margin-bottom: 10px; 
             color: #1e1b4b;
+            letter-spacing: -1px;
         }
-        p { color: #64748b; font-size: 1.1rem; }
+        p { color: #64748b; font-size: 1.2rem; margin-top: 0;}
 
-        /* --- 核心容器：精致版 --- */
+        /* --- 核心容器：巨幕工作台 --- */
         .app-wrapper {
-            width: 100%;
-            max-width: 900px; 
+            width: 95%; /* 在小屏上占95% */
+            /* 👇 关键：加大宽度，从 900 -> 1100，瞬间大气 */
+            max-width: 1100px; 
             
-            /* 👇 黄金比例高度：420px 👇 */
-            /* 极度紧凑，拒绝大留白 */
-            height: 420px; 
+            /* 👇 关键：加高高度，让操作区呼吸感更强 */
+            height: 600px; 
             
-            /* 磨砂玻璃质感 */
-            background: rgba(255, 255, 255, 0.6); 
-            backdrop-filter: blur(24px); 
-            -webkit-backdrop-filter: blur(24px);
+            /* 玻璃拟态 */
+            background: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(25px); 
+            -webkit-backdrop-filter: blur(25px);
             
             border: 1px solid rgba(255, 255, 255, 1);
-            border-radius: 24px;
+            border-radius: 32px; /* 更圆润的角 */
             
-            /* 悬浮阴影 */
+            /* 更深邃的投影，营造悬浮感 */
             box-shadow: 
-                0 10px 30px -5px rgba(0, 0, 0, 0.04),
-                0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+                0 25px 50px -12px rgba(0, 0, 0, 0.08),
+                0 0 0 1px rgba(255, 255, 255, 0.5) inset;
                 
             overflow: hidden;
-            margin-bottom: 60px;
+            position: relative;
+            margin-bottom: 50px;
         }
 
         iframe {
             width: 100%;
             height: 100%;
             border: none;
-            transform: scale(1.002);
         }
 
-        footer { color: #94a3b8; font-size: 0.85rem; padding-bottom: 40px; }
+        /* 底部 */
+        footer { color: #94a3b8; font-size: 0.9rem; padding-bottom: 40px; }
         
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
-            .app-wrapper { height: 720px; } /* 手机端自动变高 */
+            .app-wrapper { height: 800px; width: 100%; border-radius: 0; border: none; } 
         }
     </style>
 </head>
 <body>
-
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
 
     <nav>
         <div class="logo">SonicFlow</div>
@@ -97,15 +85,16 @@
 
     <div class="hero">
         <h1>Separate Vocals Like Magic.</h1>
-        <p>Studio-quality stem separation. Free & Unlimited.</p>
+        <p>Professional AI Stem Splitter for Creators.</p>
     </div>
 
     <div class="app-wrapper">
+        <!-- 你的 Hugging Face 链接 -->
         <iframe src="https://ethankyrgyz-free-vocal-remover.hf.space" allow="clipboard-read; clipboard-write"></iframe>
     </div>
 
     <footer>
-        &copy; 2026 SonicFlow.
+        &copy; 2026 SonicFlow. Built for the Future.
     </footer>
 
 </body>
