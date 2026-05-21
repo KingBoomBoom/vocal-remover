@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.legal-page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 48px 22px 72px;
+  line-height: 1.75;
+}
+
+.legal-page h1,
+.legal-page h2 {
+  font-family: Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+.legal-page h1 {
+  font-size: 2.4rem;
+  margin: 16px 0 22px;
+}
+
+.legal-page h2 {
+  font-size: 1.35rem;
+  margin-top: 30px;
+}
+
+.legal-page p,
+.legal-page li {
+  color: #475569;
+}
+
+.legal-page a {
+  color: #4f46e5;
+}
+
+.back-link {
+  display: inline-flex;
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 800;
+}
