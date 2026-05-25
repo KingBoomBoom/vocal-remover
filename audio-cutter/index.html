@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Audio Cutter Online - Trim Audio Locally | CleanStems</title>
+  <meta name="description" content="Trim an audio clip in your browser and download a WAV cut. Your file stays on your device while using the CleanStems audio cutter.">
+  <link rel="canonical" href="https://www.cleanstems.com/audio-cutter/">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/audio-cutter.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CleanStems Audio Cutter","applicationCategory":"MultimediaApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Audio Cutter</p>
+      <p class="kicker">Browser-only utility</p>
+      <h1>Free Audio Cutter Online</h1>
+      <p class="lead">Trim a chorus, vocal exercise or reference section directly in your browser. Audio selected here is processed locally and is not sent to CleanStems.</p>
+    </div></section>
+    <div class="content-shell">
+      <section class="utility-box" aria-label="Audio trimming controls">
+        <div class="field">
+          <label for="audio-file">Select an audio file</label>
+          <input id="audio-file" type="file" accept="audio/*,.mp3,.wav,.m4a,.ogg">
+        </div>
+        <audio id="audio-preview" class="hidden" controls></audio>
+        <p id="file-details" class="status">Choose an audio file supported by your browser to begin.</p>
+        <div id="trim-controls" class="hidden">
+          <div class="time-grid">
+            <div class="field">
+              <label for="start-time">Start time (seconds)</label>
+              <input id="start-time" type="number" min="0" step="0.01" value="0">
+            </div>
+            <div class="field">
+              <label for="end-time">End time (seconds)</label>
+              <input id="end-time" type="number" min="0" step="0.01">
+            </div>
+          </div>
+          <div class="utility-actions">
+            <button id="preview-cut" class="btn secondary" type="button">Preview Selection</button>
+            <button id="download-cut" class="btn primary" type="button">Download WAV Clip</button>
+          </div>
+          <p id="cutter-status" class="status" role="status"></p>
+        </div>
+      </section>
+      <section class="content-section">
+        <h2>How the Audio Cutter Works</h2>
+        <p>Your browser decodes the selected audio file, copies only the time range you choose and creates a downloadable WAV clip. Because this tool runs locally, it is useful for quickly cutting a stem or practice segment after using <a href="/vocal-remover/">Vocal Remover</a> or <a href="/karaoke-maker/">Karaoke Maker</a>.</p>
+        <div class="steps">
+          <div class="step"><div><strong>Load an audio file.</strong><p>Common MP3 and WAV files work in modern browsers; supported formats depend on your device.</p></div></div>
+          <div class="step"><div><strong>Set start and end seconds.</strong><p>Preview the chosen range before exporting it.</p></div></div>
+          <div class="step"><div><strong>Download the WAV clip.</strong><p>The output is saved from your browser without uploading your original file.</p></div></div>
+        </div>
+      </section>
+      <section class="content-section"><h2>Related Tools</h2><div class="related-grid">
+        <a class="related-card" href="/karaoke-maker/"><h3>Karaoke Maker</h3><p>Create a practice instrumental first.</p></a>
+        <a class="related-card" href="/vocal-remover/"><h3>Vocal Remover</h3><p>Separate vocal and backing audio.</p></a>
+        <a class="related-card" href="/bpm-tapper/"><h3>BPM Tapper</h3><p>Estimate the clip tempo.</p></a>
+      </div></section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Free online audio tools for permitted creative work.</p></div><nav class="footer-links"><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>
