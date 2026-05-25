@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Speed and Pitch Changer Online - Practice Slower | CleanStems</title>
+  <meta name="description" content="Slow down or speed up audio locally in your browser. Preserve pitch for practice or use tape-style speed-linked pitch change.">
+  <link rel="canonical" href="https://www.cleanstems.com/pitch-speed-changer/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/speed-pitch-changer.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CleanStems Audio Speed and Pitch Changer","applicationCategory":"MultimediaApplication","operatingSystem":"Web","description":"A local audio playback speed controller with pitch preservation and tape-style pitch-following modes.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Speed and Pitch Changer</p>
+      <p class="kicker">Browser-only practice tool</p>
+      <h1>Audio Speed and Pitch Changer</h1>
+      <p class="lead">Slow a rehearsal track down while preserving pitch, or switch to tape-style playback where changing speed also changes pitch.</p>
+    </div></section>
+    <div class="content-shell">
+      <section class="utility-box" aria-label="Speed and pitch controls">
+        <div class="field">
+          <label for="speed-file">Select an audio file</label>
+          <input id="speed-file" type="file" accept="audio/*,.mp3,.wav,.m4a,.ogg">
+        </div>
+        <audio id="speed-player" class="hidden" controls></audio>
+        <p id="speed-details" class="status">Your audio remains local to this browser tool.</p>
+        <div id="speed-controls" class="hidden">
+          <div class="display-panel"><div><div id="speed-output" class="display-value">1.00x</div><p id="pitch-output" class="display-sub">Pitch preserved</p></div></div>
+          <div class="field">
+            <div class="field-row"><label for="speed-rate">Playback speed</label><span class="field-output">0.50x-1.50x</span></div>
+            <input id="speed-rate" type="range" min="0.50" max="1.50" value="1" step="0.01">
+          </div>
+          <label class="check-row"><input id="preserve-pitch" type="checkbox" checked> Preserve pitch while changing speed</label>
+          <div class="utility-actions">
+            <button class="btn secondary" data-rate="0.75" type="button">0.75x</button>
+            <button class="btn secondary" data-rate="1" type="button">1.00x</button>
+            <button class="btn secondary" data-rate="1.25" type="button">1.25x</button>
+          </div>
+          <p id="speed-status" class="status" role="status"></p>
+        </div>
+      </section>
+      <section class="content-section">
+        <h2>Two Honest Playback Modes</h2>
+        <p><strong>Preserve pitch</strong> asks the browser to change rehearsal speed without changing key. <strong>Tape-style mode</strong> links speed and pitch together; the displayed semitone change is approximate. This tool plays locally and does not create a downloadable transformed file.</p>
+        <div class="related-grid">
+          <a class="related-card" href="/audio-looper/"><h3>Audio Looper</h3><p>Repeat the slowed passage.</p></a>
+          <a class="related-card" href="/metronome/"><h3>Metronome</h3><p>Raise speed gradually.</p></a>
+          <a class="related-card" href="/guides/how-to-slow-down-a-song-for-practice/"><h3>Speed Guide</h3><p>Practice without rushing.</p></a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Free online audio tools for permitted creative work.</p></div><nav class="footer-links"><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Song Key Finder Online - Local Key Estimate | CleanStems</title>
+  <meta name="description" content="Estimate the musical key of an audio file locally in your browser. CleanStems Key Finder analyzes up to 30 seconds and reports alternatives.">
+  <link rel="canonical" href="https://www.cleanstems.com/key-finder/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/key-finder.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CleanStems Key Finder","applicationCategory":"MultimediaApplication","operatingSystem":"Web","description":"A local experimental musical key estimator for audio files.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Key Finder</p>
+      <p class="kicker">Experimental local analysis</p>
+      <h1>Free Song Key Finder</h1>
+      <p class="lead">Estimate a likely major or minor key from up to the first 30 seconds of audio. Analysis runs in your browser and should be verified by ear.</p>
+    </div></section>
+    <div class="content-shell">
+      <section class="utility-box" aria-label="Key finder controls">
+        <div class="tool-alert">Key detection is an estimate. Modulations, weak harmony, percussion-heavy intros and short samples can produce uncertain results.</div>
+        <div class="field">
+          <label for="key-file">Select an audio file</label>
+          <input id="key-file" type="file" accept="audio/*,.mp3,.wav,.m4a,.ogg">
+        </div>
+        <p id="key-details" class="status">Choose a tonal section of a permitted file. Nothing is uploaded.</p>
+        <div class="utility-actions"><button id="key-analyze" class="btn primary" type="button" disabled>Estimate Key</button></div>
+        <p id="key-status" class="status" role="status"></p>
+        <div id="key-results" class="hidden">
+          <div class="display-panel"><div><div id="key-top" class="display-value">--</div><p id="key-note" class="display-sub"></p></div></div>
+          <div id="key-alternatives" class="result-grid" aria-label="Alternative key estimates"></div>
+          <h3>Pitch-Class Energy</h3>
+          <div id="chroma-list" class="chroma-list" aria-label="Relative note energy"></div>
+        </div>
+      </section>
+      <section class="content-section">
+        <h2>When a Key Estimate Helps</h2>
+        <p>A likely key can help a singer choose warmups or a player locate starting chords. This first version uses local spectral analysis and tonal profiles, so it is a starting hint rather than a promise of production-grade detection.</p>
+        <div class="related-grid">
+          <a class="related-card" href="/pitch-speed-changer/"><h3>Speed and Pitch</h3><p>Practise the passage more slowly.</p></a>
+          <a class="related-card" href="/metronome/"><h3>Metronome</h3><p>Keep consistent timing.</p></a>
+          <a class="related-card" href="/guides/how-to-find-the-key-of-a-song/"><h3>Key Guide</h3><p>Check the estimate by ear.</p></a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Free online audio tools for permitted creative work.</p></div><nav class="footer-links"><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>

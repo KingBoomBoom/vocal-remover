@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Audio Looper Online - Repeat Practice Sections | CleanStems</title>
+  <meta name="description" content="Loop any selected section of an audio file in your browser. Practice vocals or instruments with a private, no-upload audio looper.">
+  <link rel="canonical" href="https://www.cleanstems.com/audio-looper/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/audio-looper.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CleanStems Audio Looper","applicationCategory":"MultimediaApplication","operatingSystem":"Web","description":"A browser-based audio section looper for music practice.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Audio Looper</p>
+      <p class="kicker">Browser-only practice tool</p>
+      <h1>Free Audio Looper Online</h1>
+      <p class="lead">Choose a verse, chorus or difficult phrase and repeat it while you practise. Your selected file stays in your browser.</p>
+    </div></section>
+    <div class="content-shell">
+      <section class="utility-box" aria-label="Audio loop controls">
+        <div class="field">
+          <label for="loop-file">Select an audio file</label>
+          <input id="loop-file" type="file" accept="audio/*,.mp3,.wav,.m4a,.ogg">
+        </div>
+        <audio id="loop-player" class="hidden" controls></audio>
+        <p id="loop-details" class="status">Choose an audio file supported by your browser to begin.</p>
+        <div id="loop-controls" class="hidden">
+          <div class="time-grid">
+            <div class="field"><label for="loop-start">Loop start (seconds)</label><input id="loop-start" type="number" min="0" step="0.01" value="0"></div>
+            <div class="field"><label for="loop-end">Loop end (seconds)</label><input id="loop-end" type="number" min="0" step="0.01"></div>
+          </div>
+          <label class="check-row"><input id="loop-enabled" type="checkbox" checked> Repeat the selected section continuously</label>
+          <div class="utility-actions">
+            <button id="loop-play" class="btn primary" type="button">Start Loop</button>
+            <button id="loop-stop" class="btn secondary" type="button">Stop</button>
+          </div>
+          <p id="loop-status" class="status" role="status"></p>
+        </div>
+      </section>
+      <section class="content-section">
+        <h2>Practice One Passage Without Scrubbing</h2>
+        <p>A short repeated section is useful for vocal phrasing, guitar changes, piano voicings and transcription. Load a permitted audio file, set start and end times, then practise the same passage until it feels natural.</p>
+        <div class="steps">
+          <div class="step"><div><strong>Prepare the passage.</strong><p>Use <a href="/audio-cutter/">Audio Cutter</a> first if you want a separate downloadable rehearsal clip.</p></div></div>
+          <div class="step"><div><strong>Loop a focused range.</strong><p>Choose a manageable phrase instead of repeating the whole track.</p></div></div>
+          <div class="step"><div><strong>Slow it down if needed.</strong><p>Open <a href="/pitch-speed-changer/">Speed and Pitch Changer</a> when full-tempo practice is too demanding.</p></div></div>
+        </div>
+      </section>
+      <section class="content-section"><h2>Related Practice Tools</h2><div class="related-grid">
+        <a class="related-card" href="/metronome/"><h3>Metronome</h3><p>Practice against a steady beat.</p></a>
+        <a class="related-card" href="/karaoke-maker/"><h3>Karaoke Maker</h3><p>Create a permitted backing track.</p></a>
+        <a class="related-card" href="/guides/how-to-loop-a-practice-section/"><h3>Looping Guide</h3><p>Build a useful repetition routine.</p></a>
+      </div></section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Free online audio tools for permitted creative work.</p></div><nav class="footer-links"><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>

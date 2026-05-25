@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAV vs MP3 Stem Separation: Controlled Test Results - CleanStems</title>
+  <meta name="description" content="Listen to a transparent CleanStems controlled test comparing WAV and 128 kbps MP3 inputs through the current separation processor.">
+  <link rel="canonical" href="https://www.cleanstems.com/guides/wav-vs-mp3-stem-separation-test/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"WAV vs MP3 Stem Separation: A Controlled Synthetic Test","datePublished":"2026-05-26","dateModified":"2026-05-26","author":{"@type":"Organization","name":"CleanStems"},"publisher":{"@type":"Organization","name":"CleanStems"},"mainEntityOfPage":"https://www.cleanstems.com/guides/wav-vs-mp3-stem-separation-test/"}
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Quality Test</p>
+      <p class="kicker">Original test data</p>
+      <h1>WAV vs MP3 Stem Separation: Controlled Test</h1>
+      <p class="lead">We ran a self-generated, rights-safe audio sample through the current public processor and publish the inputs and returned outputs below.</p>
+    </div></section>
+    <div class="content-shell article-body">
+      <p class="article-byline">By CleanStems Editorial | Tested and published May 26, 2026 | <a href="/about.html">About this site</a></p>
+      <div class="article-note"><strong>Important limitation:</strong> this is a synthetic stress test, not a sung performance. The lead is a vibrating tone melody used as a known reference. It tests encoding sensitivity and whether a non-human melodic lead is classified as a vocal, not real-world vocal-removal quality.</div>
+      <h2>Test Method</h2>
+      <ol>
+        <li>We generated an 8-second, mono 22.05 kHz lead-melody reference and a separate synthesized backing reference.</li>
+        <li>We mixed those references into lossless WAV, then encoded the same mix as a 128 kbps MP3.</li>
+        <li>On May 26, 2026, we submitted each input to the same public separation processor currently embedded in the CleanStems vocal tool.</li>
+        <li>The processor returned vocal and instrumental WAV files at 44.1 kHz stereo. We measured output RMS level in dBFS and made all clips available to audition.</li>
+      </ol>
+      <h2>Reference and Inputs</h2>
+      <div class="audio-comparison">
+        <div class="sample-card"><h3>Lead melody reference</h3><p>Known synthetic lead proxy.</p><audio controls preload="none" src="/assets/benchmarks/reference-lead.wav"></audio></div>
+        <div class="sample-card"><h3>Backing reference</h3><p>Known synthesized accompaniment.</p><audio controls preload="none" src="/assets/benchmarks/reference-backing.wav"></audio></div>
+        <div class="sample-card"><h3>WAV mixed input</h3><p>Lossless test input, -23.55 dBFS RMS.</p><audio controls preload="none" src="/assets/benchmarks/test-mix.wav"></audio></div>
+        <div class="sample-card"><h3>MP3 mixed input</h3><p>Same mix encoded at 128 kbps.</p><audio controls preload="none" src="/assets/benchmarks/test-mix-128k.mp3"></audio></div>
+      </div>
+      <h2>Returned Outputs to Audition</h2>
+      <div class="audio-comparison">
+        <div class="sample-card"><h3>WAV input: vocals output</h3><p>Returned vocal stem from lossless input.</p><audio controls preload="none" src="/assets/benchmarks/separated-wav-vocals.wav"></audio></div>
+        <div class="sample-card"><h3>WAV input: instrumental output</h3><p>Returned non-vocal stem from lossless input.</p><audio controls preload="none" src="/assets/benchmarks/separated-wav-instrumental.wav"></audio></div>
+        <div class="sample-card"><h3>MP3 input: vocals output</h3><p>Returned vocal stem from lossy input.</p><audio controls preload="none" src="/assets/benchmarks/separated-mp3-vocals.wav"></audio></div>
+        <div class="sample-card"><h3>MP3 input: instrumental output</h3><p>Returned non-vocal stem from lossy input.</p><audio controls preload="none" src="/assets/benchmarks/separated-mp3-instrumental.wav"></audio></div>
+      </div>
+      <h2>Measured Result</h2>
+      <table class="data-table">
+        <thead><tr><th>Returned output</th><th>WAV input</th><th>128 kbps MP3 input</th></tr></thead>
+        <tbody>
+          <tr><td>Vocals stem RMS level</td><td>-82.08 dBFS</td><td>-77.51 dBFS</td></tr>
+          <tr><td>Instrumental stem RMS level</td><td>-25.73 dBFS</td><td>-25.22 dBFS</td></tr>
+        </tbody>
+      </table>
+      <h2>What This Result Shows</h2>
+      <p>The synthetic melody was not treated as a human vocal in this run. Almost all audible material remained in the instrumental output, while both vocal outputs were near-silent. The MP3 run left a slightly louder vocal-output residue than the WAV run, a difference of 4.57 dB in this near-silent output.</p>
+      <p>This does <strong>not</strong> establish that WAV will always produce cleaner separated vocals on real songs. It establishes a narrower and useful fact: a simple non-human lead tone is not a fair proxy for judging singing separation, and lossy encoding can alter low-level residual output in this controlled case.</p>
+      <h2>Next Quality Test Needed</h2>
+      <p>The next publishable comparison should use a short recording with separate authorized human vocal and accompaniment reference stems. That would allow listening tests and reference-based separation measurements for a task the tool is actually meant to perform.</p>
+      <p>All source and returned clips on this page are published for repeatable inspection. The synthesized source material was created for CleanStems and contains no commercial recording.</p>
+      <div class="actions"><a class="btn primary" href="/vocal-remover/">Try Permitted Audio</a><a class="btn secondary" href="/guides/why-ai-vocal-removers-create-artifacts/">Understand Artifacts</a></div>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Free online audio tools for permitted creative work.</p></div><nav class="footer-links"><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/copyright.html">Copyright</a><a href="/contact.html">Contact</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>
