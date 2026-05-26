@@ -93,7 +93,7 @@
   }
 
   function hasImitationRisk(text) {
-    return /(in the style of|sounds? (exactly )?like|voice of|clone|impersonat(e|ing)|cover of)/i.test(text);
+    return /(in (the )?style of|style of|sounds? (exactly )?like|voice of|cloned? voice|impersonat(e|ing)|cover of)/i.test(text);
   }
 
   function clean(value) {
@@ -115,7 +115,7 @@
   function generatePrompt(event) {
     event.preventDefault();
     var userText = [
-      genre.value, mood.value, instruments.value, vocals.value, structure.value, avoid.value
+      genre.value, mood.value, instruments.value, vocals.value, structure.value
     ].join(" ");
     if (hasImitationRisk(userText)) {
       status.textContent = "Use genre, mood and instrumentation descriptions instead of a named song, artist or cloned voice request.";
