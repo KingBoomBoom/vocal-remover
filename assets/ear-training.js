@@ -11,6 +11,7 @@
   var score = 0;
   var attempts = 0;
   var answered = false;
+  var trackedStart = false;
   var intervals = [
     { name: "Minor 2nd", semitones: 1 },
     { name: "Major 2nd", semitones: 2 },
@@ -87,6 +88,10 @@
       context = new AudioContext();
     }
     context.resume();
+    if (!trackedStart && window.cleanStemsTrack) {
+      window.cleanStemsTrack("ear_training_started", { mode: mode.value });
+      trackedStart = true;
+    }
     var base = [220, 246.94, 261.63, 293.66][Math.floor(Math.random() * 4)];
     var start = context.currentTime + 0.05;
     answered = false;

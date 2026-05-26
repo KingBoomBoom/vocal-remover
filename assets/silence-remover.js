@@ -189,6 +189,9 @@
     downloadButton.disabled = false;
     summary.textContent = removals.length + " silent region(s) removed, shortening the file by " + formatTime(removedFrames / audioBuffer.sampleRate) + ".";
     status.textContent = "Preview the processed WAV before downloading.";
+    if (window.cleanStemsTrack) {
+      window.cleanStemsTrack("silence_processed", { removed_regions: removals.length });
+    }
   });
 
   downloadButton.addEventListener("click", function () {
@@ -200,5 +203,8 @@
     link.download = "cleanstems-silence-removed.wav";
     link.click();
     status.textContent = "Processed WAV downloaded.";
+    if (window.cleanStemsTrack) {
+      window.cleanStemsTrack("silence_downloaded");
+    }
   });
 }());

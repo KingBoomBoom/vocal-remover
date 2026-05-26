@@ -136,6 +136,9 @@
       download.click();
       setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
       status.textContent = "Downloaded a WAV clip lasting " + formatSeconds(range.end - range.start) + ".";
+      if (window.cleanStemsTrack) {
+        window.cleanStemsTrack("audio_clip_downloaded");
+      }
     } catch (error) {
       status.textContent = error.message;
     }

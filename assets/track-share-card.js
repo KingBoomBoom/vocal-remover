@@ -71,5 +71,10 @@
     link.download = "cleanstems-track-card.png";
     link.click();
     status.textContent = "PNG card downloaded.";
+    if (window.cleanStemsTrack) {
+      window.cleanStemsTrack("share_card_downloaded", {
+        card_style: document.getElementById("card-style").value
+      });
+    }
   });
 }());

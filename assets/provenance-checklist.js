@@ -34,6 +34,9 @@
     ].join("\n");
     result.classList.remove("hidden");
     status.textContent = "Source record generated locally. Keep your underlying license or creation records separately.";
+    if (window.cleanStemsTrack) {
+      window.cleanStemsTrack("source_record_generated", { ai_assisted: assisted });
+    }
   });
 
   copy.addEventListener("click", function () {

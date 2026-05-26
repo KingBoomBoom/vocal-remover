@@ -7,6 +7,7 @@
   var tapButton = document.getElementById("tap-button");
   var resetButton = document.getElementById("reset-bpm");
   var taps = [];
+  var trackedEstimate = false;
 
   function describeTempo(bpm) {
     if (bpm < 70) { return "Slow tempo"; }
@@ -45,6 +46,10 @@
     value.textContent = String(bpm);
     description.textContent = describeTempo(bpm);
     status.textContent = taps.length + " taps averaged. Keep tapping to stabilize the estimate.";
+    if (!trackedEstimate && window.cleanStemsTrack) {
+      window.cleanStemsTrack("bpm_estimate_created");
+      trackedEstimate = true;
+    }
   }
 
   tapButton.addEventListener("click", tap);

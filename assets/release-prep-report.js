@@ -93,6 +93,9 @@
     ].join("\n");
     result.classList.remove("hidden");
     status.textContent = "Report created locally. No audio was uploaded to CleanStems.";
+    if (window.cleanStemsTrack) {
+      window.cleanStemsTrack("release_report_created");
+    }
   });
 
   copy.addEventListener("click", function () {

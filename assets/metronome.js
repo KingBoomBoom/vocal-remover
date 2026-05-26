@@ -14,6 +14,7 @@
   var nextTime = 0;
   var beat = 0;
   var taps = [];
+  var trackedStart = false;
 
   function bpm() { return Number(bpmInput.value); }
 
@@ -68,6 +69,10 @@
     timer = window.setInterval(scheduler, 25);
     playButton.textContent = "Stop Metronome";
     status.textContent = "Playing " + bpm() + " BPM in " + beatsInput.value + "/4.";
+    if (!trackedStart && window.cleanStemsTrack) {
+      window.cleanStemsTrack("metronome_started", { beats_per_bar: beatsInput.value });
+      trackedStart = true;
+    }
   }
 
   function setBpm(value) {

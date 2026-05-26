@@ -126,6 +126,9 @@
       try {
         render(analyze(audioBuffer));
         status.textContent = "Analysis complete. Key detection is an estimate, especially for short or atonal audio.";
+        if (window.cleanStemsTrack) {
+          window.cleanStemsTrack("key_estimate_created");
+        }
       } catch (error) {
         status.textContent = "Analysis failed in this browser.";
       }

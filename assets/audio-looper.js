@@ -13,6 +13,7 @@
   var status = document.getElementById("loop-status");
   var url = null;
   var active = false;
+  var trackedStart = false;
 
   function range() {
     var start = Number(startInput.value);
@@ -74,6 +75,10 @@
       active = true;
       player.play();
       status.textContent = "Playing " + (selected.end - selected.start).toFixed(2) + " seconds" + (looping.checked ? " on repeat." : " once.");
+      if (!trackedStart && window.cleanStemsTrack) {
+        window.cleanStemsTrack("audio_loop_started", { repeat_enabled: looping.checked });
+        trackedStart = true;
+      }
     } catch (error) {
       status.textContent = error.message;
     }

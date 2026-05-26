@@ -11,6 +11,7 @@
   var details = document.getElementById("speed-details");
   var status = document.getElementById("speed-status");
   var url = null;
+  var trackedStart = false;
 
   function updatePlayback() {
     var rate = Number(speedInput.value);
@@ -42,6 +43,12 @@
   });
   speedInput.addEventListener("input", updatePlayback);
   preserveInput.addEventListener("change", updatePlayback);
+  player.addEventListener("play", function () {
+    if (!trackedStart && window.cleanStemsTrack) {
+      window.cleanStemsTrack("speed_practice_started", { preserve_pitch: preserveInput.checked });
+      trackedStart = true;
+    }
+  });
   document.querySelectorAll("[data-rate]").forEach(function (button) {
     button.addEventListener("click", function () {
       speedInput.value = button.getAttribute("data-rate");

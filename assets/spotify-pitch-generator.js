@@ -29,6 +29,9 @@
     output.value = text;
     result.classList.remove("hidden");
     status.textContent = "Draft generated locally. Edit it for accuracy before using Spotify for Artists.";
+    if (window.cleanStemsTrack) {
+      window.cleanStemsTrack("pitch_draft_generated");
+    }
   });
 
   copy.addEventListener("click", function () {

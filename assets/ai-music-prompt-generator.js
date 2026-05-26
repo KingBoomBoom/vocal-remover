@@ -150,6 +150,12 @@
     platformNote.textContent = platformNotes[selectedPlatform];
     status.textContent = "Prompt generated locally. CleanStems does not send this prompt to a music generation service.";
     result.classList.remove("hidden");
+    if (window.cleanStemsTrack) {
+      window.cleanStemsTrack("ai_prompt_generated", {
+        platform: selectedPlatform,
+        preset: preset.value
+      });
+    }
   }
 
   preset.addEventListener("change", fillPreset);
