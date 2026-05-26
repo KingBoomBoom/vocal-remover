@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Prompts de Musica IA Gratis - CleanStems</title>
+  <meta name="description" content="Crea un prompt original en ingles para musica generada con IA, sin imitar artistas ni copiar letras. Funciona en tu navegador.">
+  <link rel="canonical" href="https://www.cleanstems.com/es/generador-de-prompts-musicales-ai/">
+  <link rel="alternate" hreflang="es" href="https://www.cleanstems.com/es/generador-de-prompts-musicales-ai/">
+  <link rel="alternate" hreflang="en" href="https://www.cleanstems.com/ai-music-prompt-generator/">
+  <link rel="alternate" hreflang="x-default" href="https://www.cleanstems.com/ai-music-prompt-generator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/ai-music-prompt-generator.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/es/removedor-de-voces/">Quitar voz</a><a href="/ai-music/">AI Music</a><a href="/guides/">Guides</a><a href="/terms.html">Terms</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Inicio</a> / Prompt musical IA</p>
+      <p class="kicker">Funciona localmente</p>
+      <h1>Generador de Prompts de Musica IA</h1>
+      <p class="lead">Prepara un prompt original en ingles para un servicio externo de generacion musical. CleanStems no genera audio ni envia tus datos.</p>
+    </div></section>
+    <div class="content-shell">
+      <section class="utility-box">
+        <form id="prompt-form">
+          <div class="field"><label for="prompt-preset">Escena inicial</label><select id="prompt-preset"><option value="vinyl-lofi">Vinyl Warmth Lo-fi</option><option value="cassette-bedroom-pop">Cassette Bedroom Pop</option><option value="y2k-pop">Y2K Pop Instrumental</option><option value="retro-hip-hop">Retro Hip-Hop Instrumental</option><option value="record-store-jazz">Record Store Jazz Ambience</option><option value="nostalgic-photo">Nostalgic Photo Soundtrack</option></select></div>
+          <div class="form-grid">
+            <div class="field"><label for="prompt-platform">Plataforma</label><select id="prompt-platform"><option value="suno">Suno</option><option value="lyria">Gemini Lyria</option><option value="eleven">Eleven Music</option><option value="firefly">Adobe Firefly Soundtrack</option></select></div>
+            <div class="field"><label for="prompt-purpose">Uso</label><select id="prompt-purpose"><option>YouTube background audio</option><option>original vocal demo</option><option>instrument practice loop</option><option>podcast intro</option></select></div>
+            <div class="field"><label for="prompt-genre">Genero</label><input id="prompt-genre" type="text" required></div>
+            <div class="field"><label for="prompt-mood">Ambiente</label><input id="prompt-mood" type="text" required></div>
+            <div class="field"><label for="prompt-tempo">Tempo (BPM)</label><input id="prompt-tempo" type="number" min="40" max="220" value="78" required></div>
+            <div class="field"><label for="prompt-duration">Duracion</label><select id="prompt-duration"><option>30 seconds</option><option>60 seconds</option><option>90 seconds</option><option>2 minutes</option></select></div>
+          </div>
+          <div class="field"><label for="prompt-instruments">Instrumentos</label><input id="prompt-instruments" type="text" required></div>
+          <div class="field"><label for="prompt-vocals">Voces</label><input id="prompt-vocals" type="text" required></div>
+          <div class="field"><label for="prompt-structure">Estructura</label><input id="prompt-structure" type="text" required></div>
+          <div class="field"><label for="prompt-avoid">Evitar</label><input id="prompt-avoid" type="text" value="copyrighted lyrics, recognizable existing melody, named artist imitation, cloned voice" required></div>
+          <div class="tool-alert">No solicites la imitacion de un artista, una voz clonada, letras copiadas ni una melodia reconocible.</div>
+          <div class="utility-actions"><button class="btn primary" type="submit">Generar prompt</button></div>
+        </form>
+        <p id="prompt-status" class="status" role="status"></p>
+        <div id="prompt-result" class="hidden prompt-results">
+          <div class="field"><label for="prompt-output">Prompt completo</label><textarea id="prompt-output" rows="7" readonly></textarea><button id="copy-full-prompt" class="btn secondary" type="button">Copiar prompt</button></div>
+          <div class="field"><label for="prompt-short-output">Version corta</label><textarea id="prompt-short-output" rows="3" readonly></textarea><button id="copy-short-prompt" class="btn secondary" type="button">Copiar version corta</button></div>
+          <p id="prompt-platform-note" class="article-note"></p>
+          <div class="related-grid"><a class="related-card" href="/es/removedor-de-voces/"><h3>Quitar voz</h3><p>Procesa audio permitido.</p></a><a class="related-card" href="/bpm-tapper/"><h3>BPM</h3><p>Estima el tempo.</p></a><a class="related-card" href="/key-finder/"><h3>Tonalidad</h3><p>Obtiene una estimacion.</p></a></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Herramientas de audio para uso permitido.</p></div><nav class="footer-links"><a href="/ai-music-prompt-generator/">English</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contacto</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>

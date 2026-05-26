@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Silence Remover for Audio - Local Browser Tool | CleanStems</title>
+  <meta name="description" content="Remove long silent pauses from podcast, lesson or demo audio in your browser and download a processed WAV. Your file stays local.">
+  <link rel="canonical" href="https://www.cleanstems.com/silence-remover/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/silence-remover.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CleanStems Silence Remover","applicationCategory":"MultimediaApplication","operatingSystem":"Web","description":"A local browser tool for removing detected silent pauses from permitted audio.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/tools/">Tools</a><a href="/ai-music/">AI Music</a><a href="/guides/">Guides</a><a href="/privacy.html">Privacy</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Silence Remover</p>
+      <p class="kicker">Runs locally</p>
+      <h1>Remove Silence from Audio</h1>
+      <p class="lead">Shorten long pauses in an original podcast, lesson recording, spoken practice file or music demo. Audio analysis and WAV export run in your browser.</p>
+    </div></section>
+    <div class="content-shell">
+      <section class="utility-box" aria-label="Silence removal controls">
+        <div class="field"><label for="silence-file">Select audio you may edit</label><input id="silence-file" type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg"></div>
+        <audio id="silence-original" class="hidden" controls></audio>
+        <p id="silence-status" class="status" role="status">Choose a browser-supported audio file. Nothing is uploaded.</p>
+        <div id="silence-controls" class="hidden">
+          <div class="form-grid">
+            <div class="field"><div class="field-row"><label for="silence-threshold">Silence threshold</label><span id="silence-threshold-value" class="field-output">-42 dB</span></div><input id="silence-threshold" type="range" min="-60" max="-20" value="-42"></div>
+            <div class="field"><label for="silence-duration">Minimum pause to remove</label><select id="silence-duration"><option value="300">0.30 seconds</option><option value="500" selected>0.50 seconds</option><option value="750">0.75 seconds</option><option value="1000">1.00 seconds</option></select></div>
+            <div class="field"><label for="silence-padding">Keep around each pause</label><select id="silence-padding"><option value="30">30 ms</option><option value="60" selected>60 ms</option><option value="100">100 ms</option></select></div>
+          </div>
+          <div class="utility-actions"><button id="silence-analyze" class="btn primary" type="button">Remove Long Pauses</button><button id="silence-download" class="btn secondary" type="button" disabled>Download WAV</button></div>
+          <p id="silence-summary" class="status"></p>
+          <audio id="silence-result" class="hidden" controls></audio>
+        </div>
+      </section>
+      <section class="content-section">
+        <h2>Designed for Audio You Control</h2>
+        <p>This tool joins non-silent sections with brief fades to reduce clicks. It does not transcribe speech, clean background noise or normalize loudness. Use it for recordings you made or are permitted to edit.</p>
+        <div class="related-grid">
+          <a class="related-card" href="/audio-cutter/"><h3>Audio Cutter</h3><p>Trim a precise selection locally.</p></a>
+          <a class="related-card" href="/release-prep-report/"><h3>Release Prep</h3><p>Check levels and file properties.</p></a>
+          <a class="related-card" href="/audio-looper/"><h3>Audio Looper</h3><p>Repeat a practice phrase.</p></a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Audio tools for permitted creative work.</p></div><nav class="footer-links"><a href="/tools/">Tools</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Track Share Card Generator - CleanStems</title>
+  <meta name="description" content="Create a downloadable track card with title, artist, BPM and key for original or permitted audio projects. Generated locally in your browser.">
+  <link rel="canonical" href="https://www.cleanstems.com/track-share-card-generator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/track-share-card.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/tools/">Tools</a><a href="/ai-music/">AI Music</a><a href="/guides/">Guides</a><a href="/copyright.html">Copyright</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Track Share Card</p>
+      <p class="kicker">Runs locally</p>
+      <h1>Music Track Share Card Generator</h1>
+      <p class="lead">Generate a clean square PNG for an original demo or licensed project using metadata you enter. No Spotify account or external API is required.</p>
+    </div></section>
+    <div class="content-shell">
+      <section class="utility-box card-builder">
+        <form id="card-form">
+          <div class="form-grid">
+            <div class="field"><label for="card-title">Track title</label><input id="card-title" type="text" maxlength="48" required placeholder="Night Platform"></div>
+            <div class="field"><label for="card-artist">Artist name</label><input id="card-artist" type="text" maxlength="40" required placeholder="Your Artist Name"></div>
+            <div class="field"><label for="card-mood">Tagline or mood</label><input id="card-mood" type="text" maxlength="32" placeholder="Original Demo"></div>
+            <div class="field"><label for="card-style">Visual style</label><select id="card-style"><option value="midnight">Midnight Blue</option><option value="cassette">Cassette Teal</option><option value="vinyl">Vinyl Amber</option><option value="pop">Pop Magenta</option></select></div>
+            <div class="field"><label for="card-bpm">BPM</label><input id="card-bpm" type="number" min="30" max="250" placeholder="92"></div>
+            <div class="field"><label for="card-key">Key</label><input id="card-key" type="text" maxlength="12" placeholder="A minor"></div>
+          </div>
+          <div class="utility-actions"><button type="submit" class="btn primary">Generate Card</button></div>
+        </form>
+        <p id="card-status" class="status" role="status"></p>
+        <div id="card-result" class="hidden canvas-result">
+          <canvas id="share-canvas" width="1080" height="1080" aria-label="Generated track share card"></canvas>
+          <button id="download-card" type="button" class="btn secondary">Download PNG</button>
+        </div>
+      </section>
+      <section class="content-section">
+        <h2>Use Only Details You Can Publish</h2>
+        <p>The card contains only text you enter and a CleanStems-generated layout. Do not add a title, artist identity or claim that you do not have permission to publish.</p>
+        <div class="related-grid"><a class="related-card" href="/release-prep-report/"><h3>Release Prep</h3><p>Check audio before sharing.</p></a><a class="related-card" href="/bpm-tapper/"><h3>BPM Tapper</h3><p>Get a tempo note for the card.</p></a><a class="related-card" href="/key-finder/"><h3>Key Finder</h3><p>Estimate a key locally.</p></a></div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Audio tools for permitted creative work.</p></div><nav class="footer-links"><a href="/tools/">Tools</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>

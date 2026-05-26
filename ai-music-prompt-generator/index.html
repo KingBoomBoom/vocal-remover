@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free AI Music Prompt Generator - CleanStems</title>
+  <meta name="description" content="Build an original music-generation prompt for background audio, vocal demos or practice tracks. Runs locally and avoids artist imitation requests.">
+  <link rel="canonical" href="https://www.cleanstems.com/ai-music-prompt-generator/">
+  <link rel="alternate" hreflang="en" href="https://www.cleanstems.com/ai-music-prompt-generator/">
+  <link rel="alternate" hreflang="es" href="https://www.cleanstems.com/es/generador-de-prompts-musicales-ai/">
+  <link rel="alternate" hreflang="x-default" href="https://www.cleanstems.com/ai-music-prompt-generator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/ai-music-prompt-generator.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CleanStems AI Music Prompt Generator","applicationCategory":"MultimediaApplication","operatingSystem":"Web","description":"A browser-based tool that prepares original AI music prompts without generating audio.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/tools/">Tools</a><a href="/ai-music/">AI Music</a><a href="/guides/">Guides</a><a href="/privacy.html">Privacy</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Home</a> / <a href="/ai-music/">AI Music</a> / Prompt Generator</p>
+      <p class="kicker">Runs locally</p>
+      <h1>AI Music Prompt Generator</h1>
+      <p class="lead">Create an original, structured music prompt for an external generation service. This tool prepares text only; it does not upload data or generate audio.</p>
+    </div></section>
+    <div class="content-shell">
+      <section class="utility-box" aria-label="Music prompt generator">
+        <form id="prompt-form">
+          <div class="field">
+            <label for="prompt-preset">Starting scene</label>
+            <select id="prompt-preset">
+              <option value="vinyl-lofi">Vinyl Warmth Lo-fi</option>
+              <option value="cassette-bedroom-pop">Cassette Bedroom Pop</option>
+              <option value="y2k-pop">Y2K Pop Instrumental</option>
+              <option value="retro-hip-hop">Retro Hip-Hop Instrumental</option>
+              <option value="record-store-jazz">Record Store Jazz Ambience</option>
+              <option value="nostalgic-photo">Nostalgic Photo Soundtrack</option>
+            </select>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label for="prompt-platform">Target platform</label><select id="prompt-platform"><option value="suno">Suno</option><option value="lyria">Gemini Lyria</option><option value="eleven">Eleven Music</option><option value="firefly">Adobe Firefly Soundtrack</option></select></div>
+            <div class="field"><label for="prompt-purpose">Purpose</label><select id="prompt-purpose"><option>YouTube background audio</option><option>original vocal demo</option><option>instrument practice loop</option><option>podcast intro</option><option>game scene underscore</option></select></div>
+            <div class="field"><label for="prompt-genre">Genre description</label><input id="prompt-genre" type="text" required></div>
+            <div class="field"><label for="prompt-mood">Mood</label><input id="prompt-mood" type="text" required></div>
+            <div class="field"><label for="prompt-tempo">Tempo (BPM)</label><input id="prompt-tempo" type="number" min="40" max="220" value="78" required></div>
+            <div class="field"><label for="prompt-duration">Duration</label><select id="prompt-duration"><option>30 seconds</option><option>60 seconds</option><option>90 seconds</option><option>2 minutes</option></select></div>
+          </div>
+          <div class="field"><label for="prompt-instruments">Instrumentation</label><input id="prompt-instruments" type="text" required></div>
+          <div class="field"><label for="prompt-vocals">Vocal direction</label><input id="prompt-vocals" type="text" required></div>
+          <div class="field"><label for="prompt-structure">Structure</label><input id="prompt-structure" type="text" required></div>
+          <div class="field"><label for="prompt-avoid">Avoid</label><input id="prompt-avoid" type="text" value="copyrighted lyrics, recognizable existing melody, named artist imitation, cloned voice" required></div>
+          <div class="tool-alert">Do not request a named artist's style, a cloned voice, copied lyrics or a recognizable existing melody. Check the external platform's current rights terms before publishing output.</div>
+          <div class="utility-actions"><button class="btn primary" type="submit">Generate Prompt</button></div>
+        </form>
+        <p id="prompt-status" class="status" role="status"></p>
+        <div id="prompt-result" class="hidden prompt-results">
+          <div class="field"><label for="prompt-output">Complete prompt</label><textarea id="prompt-output" rows="7" readonly></textarea><button id="copy-full-prompt" class="btn secondary" type="button">Copy Full Prompt</button></div>
+          <div class="field"><label for="prompt-short-output">Short version</label><textarea id="prompt-short-output" rows="3" readonly></textarea><button id="copy-short-prompt" class="btn secondary" type="button">Copy Short Prompt</button></div>
+          <p id="prompt-platform-note" class="article-note"></p>
+          <div class="related-grid">
+            <a class="related-card" href="/vocal-remover/"><h3>Remove Vocals</h3><p>Process permitted generated audio.</p></a>
+            <a class="related-card" href="/bpm-tapper/"><h3>Find BPM</h3><p>Tap along to note tempo.</p></a>
+            <a class="related-card" href="/key-finder/"><h3>Estimate Key</h3><p>Analyze a permitted file locally.</p></a>
+          </div>
+        </div>
+      </section>
+      <section class="content-section">
+        <h2>What This Tool Does</h2>
+        <p>Prompt text is assembled in your browser from the musical descriptors you enter. CleanStems does not call Suno, Gemini, Adobe or ElevenLabs, and does not determine whether output can be commercially distributed.</p>
+        <p>For a full workflow, start with the <a href="/guides/how-to-write-an-ai-music-prompt/">prompt writing guide</a>, then process only output you have permission to use.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Audio tools for permitted creative work.</p></div><nav class="footer-links"><a href="/ai-music/">AI Music</a><a href="/guides/">Guides</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Release Prep Report - Local Audio Check | CleanStems</title>
+  <meta name="description" content="Check duration, sample rate, channels, peak level, approximate RMS and clipping risk locally before releasing permitted audio.">
+  <link rel="canonical" href="https://www.cleanstems.com/release-prep-report/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/release-prep-report.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CleanStems Release Prep Report","applicationCategory":"MultimediaApplication","operatingSystem":"Web","description":"A local audio inspection report for original or permitted tracks.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/tools/">Tools</a><a href="/ai-music/">AI Music</a><a href="/guides/">Guides</a><a href="/terms.html">Terms</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Release Prep Report</p>
+      <p class="kicker">Runs locally</p>
+      <h1>Music Release Prep Report</h1>
+      <p class="lead">Inspect key technical facts about an original or permitted audio file before exporting, sharing or continuing a production workflow.</p>
+    </div></section>
+    <div class="content-shell">
+      <section class="utility-box" aria-label="Audio release report">
+        <div class="field"><label for="report-file">Select an audio file</label><input id="report-file" type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg"></div>
+        <div class="field"><label for="report-source">Source declaration</label><select id="report-source"><option>Original recording created by me</option><option>AI-assisted track I am permitted to process</option><option>Licensed audio I am permitted to edit</option><option>Practice-only file I am authorized to use</option></select></div>
+        <div class="tool-alert">This report does not verify copyright, distribution clearance, AI disclosure requirements or mastering acceptance.</div>
+        <div class="utility-actions"><button id="report-analyze" class="btn primary" type="button" disabled>Create Report</button></div>
+        <p id="report-status" class="status" role="status">File analysis takes place in your browser. Nothing is uploaded.</p>
+        <div id="report-results" class="hidden">
+          <div id="report-cards" class="result-grid"></div>
+          <div class="field"><label for="report-text">Report notes</label><textarea id="report-text" rows="15" readonly></textarea></div>
+          <button id="copy-report" class="btn secondary" type="button">Copy Report</button>
+        </div>
+      </section>
+      <section class="content-section">
+        <h2>Continue the Workflow</h2>
+        <div class="related-grid">
+          <a class="related-card" href="/bpm-tapper/"><h3>BPM Tapper</h3><p>Estimate tempo by listening.</p></a>
+          <a class="related-card" href="/key-finder/"><h3>Key Finder</h3><p>Generate an experimental key hint.</p></a>
+          <a class="related-card" href="/track-share-card-generator/"><h3>Track Card</h3><p>Prepare a shareable visual.</p></a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Audio tools for permitted creative work.</p></div><nav class="footer-links"><a href="/tools/">Tools</a><a href="/privacy.html">Privacy</a><a href="/copyright.html">Copyright</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>

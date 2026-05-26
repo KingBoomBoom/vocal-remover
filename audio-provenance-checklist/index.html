@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Assisted Audio Disclosure Checklist - CleanStems</title>
+  <meta name="description" content="Prepare an audio source and AI-assisted disclosure record for an original or licensed project. Generated locally in the browser.">
+  <link rel="canonical" href="https://www.cleanstems.com/audio-provenance-checklist/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/provenance-checklist.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo">Clean<span>Stems</span></a><nav class="site-nav"><a href="/tools/">Tools</a><a href="/ai-music/">AI Music</a><a href="/guides/">Guides</a><a href="/terms.html">Terms</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="page-hero-inner">
+      <p class="breadcrumbs"><a href="/">Home</a> / Audio Source Record</p>
+      <p class="kicker">Release documentation</p>
+      <h1>AI-Assisted Audio Disclosure Checklist</h1>
+      <p class="lead">Generate a simple internal record of where an audio project came from and whether AI-assisted elements were used.</p>
+    </div></section>
+    <div class="content-shell">
+      <section class="utility-box">
+        <form id="provenance-form">
+          <div class="form-grid">
+            <div class="field"><label for="provenance-title">Track or project name</label><input id="provenance-title" type="text" required></div>
+            <div class="field"><label for="provenance-creator">Creator name</label><input id="provenance-creator" type="text" required></div>
+            <div class="field"><label for="provenance-source">Audio source type</label><select id="provenance-source"><option>Original recorded audio</option><option>AI-assisted original audio</option><option>Licensed third-party audio</option><option>Public-domain composition using my own recording</option></select></div>
+            <div class="field"><label for="provenance-date">Creation or export date</label><input id="provenance-date" type="date" required></div>
+          </div>
+          <div class="field"><label for="provenance-service">Generation or processing service used, if any</label><input id="provenance-service" type="text" placeholder="Example: external generator followed by CleanStems tools"></div>
+          <div class="field"><label for="provenance-license">License or permission note</label><input id="provenance-license" type="text" required placeholder="Where the underlying permission record is stored"></div>
+          <div class="field"><label for="provenance-destination">Planned release destination</label><input id="provenance-destination" type="text" required placeholder="YouTube video, demo submission, private portfolio"></div>
+          <label class="check-row"><input id="provenance-ai" type="checkbox"> AI-assisted audio elements were used</label>
+          <div class="tool-alert">This checklist is documentation only. It is not a watermark, ownership proof, license or legal review.</div>
+          <div class="utility-actions"><button class="btn primary" type="submit">Generate Record</button></div>
+        </form>
+        <p id="provenance-status" class="status" role="status"></p>
+        <div id="provenance-results" class="hidden">
+          <div class="field"><label for="provenance-output">Source record and disclosure draft</label><textarea id="provenance-output" rows="14" readonly></textarea></div>
+          <button id="copy-provenance" class="btn secondary" type="button">Copy Record</button>
+        </div>
+      </section>
+      <section class="content-section"><h2>Related Release Tools</h2><div class="related-grid"><a class="related-card" href="/release-prep-report/"><h3>Release Prep</h3><p>Inspect the audio file locally.</p></a><a class="related-card" href="/spotify-pitch-generator/"><h3>Pitch Draft</h3><p>Describe an original release.</p></a><a class="related-card" href="/track-share-card-generator/"><h3>Track Card</h3><p>Prepare a visual share asset.</p></a></div></section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div><a href="/" class="logo small">Clean<span>Stems</span></a><p>Audio tools for permitted creative work.</p></div><nav class="footer-links"><a href="/privacy.html">Privacy</a><a href="/copyright.html">Copyright</a><a href="/contact.html">Contact</a></nav></div><p class="copyright">Copyright 2026 CleanStems AI. All rights reserved.</p></footer>
+</body>
+</html>
